@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Rules & Policies | M Square Marketing</title>
+    
+    <!-- Tailwind CSS & Icons -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Brand Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Poppins', 'sans-serif'], serif: ['Playfair Display', 'serif'] },
+                    colors: { dark: '#0a0a0a', brandYellow: '#eab308' }
+                }
+            }
+        }
+    </script>
+    <style>
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            background-color: #0a0a0a;
+            color: white;
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen relative w-full overflow-x-hidden selection:bg-brandYellow selection:text-black">
+
+    <!-- ========================================== -->
+    <!-- HEADER                                     -->
+    <!-- ========================================== -->
+    <header class="fixed top-0 left-0 w-full z-[50] bg-[#0a0a0a]/95 backdrop-blur-md border-b border-white/10 px-4 md:px-8 py-3.5 flex justify-between items-center">
+        <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <div class="w-10 h-10 border border-brandYellow flex items-center justify-center bg-black/60 shadow-[0_0_10px_rgba(234,179,8,0.2)]">
+                <span class="text-brandYellow font-bold text-xl">M</span>
+            </div>
+            <div class="leading-tight">
+                <div class="text-brandYellow font-serif font-bold text-lg md:text-xl tracking-wide">M SQUARE</div>
+                <div class="text-gray-400 text-[9px] md:text-[10px] tracking-[0.25em] uppercase">M a r k e t i n g</div>
+            </div>
+        </a>
+        <a href="index.html" class="text-gray-300 hover:text-brandYellow text-sm font-semibold transition flex items-center gap-2">
+            <i class="fas fa-arrow-left"></i> Back to Home
+        </a>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- POLICY CONTENT SECTION                     -->
+    <!-- ========================================== -->
+    <main class="relative pt-32 pb-24 px-4 md:px-8 w-full flex-grow">
+        <!-- Background Glow -->
+        <div class="absolute top-20 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-[300px] bg-brandYellow/5 blur-[120px] pointer-events-none -z-10"></div>
+
+        <div class="max-w-4xl mx-auto bg-[#111111] border border-white/10 rounded-2xl p-6 md:p-12 shadow-2xl relative z-10">
+            
+            <div class="text-center mb-10">
+                <h1 class="text-3xl md:text-5xl font-serif font-bold text-white mb-4">
+                    Our <span class="italic text-brandYellow">Rules & Policies</span>
+                </h1>
+                <div class="w-16 h-1 bg-brandYellow mx-auto rounded"></div>
+            </div>
+
+            <div class="space-y-10 text-gray-300 text-sm md:text-base leading-relaxed">
+                
+                <!-- Section 1: Reels -->
+                <section>
+                    <div class="flex items-center gap-3 mb-5">
+                        <i class="fas fa-video text-brandYellow text-xl"></i>
+                        <h2 class="text-2xl font-serif font-bold text-white tracking-wide">1. VIP 10-Min Event Reels</h2>
+                    </div>
+                    <ul class="space-y-5">
+                        <li class="pl-5 border-l-2 border-brandYellow/50">
+                            <p class="text-white font-semibold mb-1">10-Minute Delivery Guarantee:</p>
+                            <p class="text-gray-300">We guarantee the delivery of the final edited cinematic reel exactly 10 minutes after the shoot concludes.</p>
+                            <p class="text-gray-400 italic mt-1">Hindi: Hum guarantee dete hain ki shoot khatam hone ke theek 10 minute baad aapko final edited reel mil jayegi.</p>
+                        </li>
+                        <li class="pl-5 border-l-2 border-brandYellow/50">
+                            <p class="text-white font-semibold mb-1">Audio & Revisions:</p>
+                            <p class="text-gray-300">As this is an express fast-track service, on-the-spot revisions are not available. Minor changes will be processed the next day from our studio.</p>
+                            <p class="text-gray-400 italic mt-1">Hindi: Yeh ek fast-track service hai, isliye on-the-spot changes nahi hote. Chhote changes agle din studio se karke diye jayenge.</p>
+                        </li>
+                        <li class="pl-5 border-l-2 border-brandYellow/50">
+                            <p class="text-white font-semibold mb-1">Raw Footage:</p>
+                            <p class="text-gray-300">Raw (unedited) video files are exclusively provided in our 'Pro' and 'Advance' packages only.</p>
+                            <p class="text-gray-400 italic mt-1">Hindi: Bina edit ki hui (raw) videos sirf 'Pro' aur 'Advance' plans mein hi di jayengi. Standard plan mein sirf reel milti hai.</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <hr class="border-white/5">
+
+                <!-- Section 2: Web Dev -->
+                <section>
+                    <div class="flex items-center gap-3 mb-5">
+                        <i class="fas fa-laptop-code text-brandYellow text-xl"></i>
+                        <h2 class="text-2xl font-serif font-bold text-white tracking-wide">2. Web Development</h2>
+                    </div>
+                    <ul class="space-y-5">
+                        
+                        <!-- Delivery Timeline Highlight -->
+                        <li class="pl-5 border-l-4 border-brandYellow bg-black/40 p-5 rounded-r-lg shadow-[0_0_15px_rgba(234,179,8,0.05)] border-y border-r border-brandYellow/10">
+                            <p class="text-brandYellow font-bold mb-2 text-lg flex items-center gap-2">
+                                <i class="fas fa-rocket"></i> Delivery Timelines:
+                            </p>
+                            <p class="text-gray-200 font-medium leading-relaxed">
+                                <span class="text-white font-bold">Pro Level</span> websites will be delivered within <span class="text-brandYellow font-bold">14 Days</span>, and <span class="text-white font-bold">Advance Level</span> websites will be delivered within <span class="text-brandYellow font-bold">30 Days</span>.
+                            </p>
+                            <p class="text-gray-400 italic mt-2">Hindi: Pro level ki website <span class="text-white font-bold">14 din</span> ke andar aur Advance level ki website <span class="text-white font-bold">30 din</span> ke andar deliver ki jayegi.</p>
+                        </li>
+
+                        <li class="pl-5 border-l-2 border-brandYellow/50">
+                            <p class="text-white font-semibold mb-1">Domain & Hosting:</p>
+                            <p class="text-gray-300">The first year of Domain and Server Hosting is included in our packages. Standard renewal charges apply from the second year.</p>
+                            <p class="text-gray-400 italic mt-1">Hindi: Pehle saal ka Domain aur Hosting package mein shamil hai. Agle saal se iska standard renewal charge dena hoga.</p>
+                        </li>
+                        <li class="pl-5 border-l-2 border-brandYellow/50">
+                            <p class="text-white font-semibold mb-1">Revisions & Maintenance:</p>
+                            <p class="text-gray-300">Minor text and image updates are free for the first 30 days after the website goes live. After that, an Annual Maintenance Contract (AMC) is required.</p>
+                            <p class="text-gray-400 italic mt-1">Hindi: Website live hone ke 30 din tak chhote updates free hain. Uske baad website maintenance ke liye AMC leni hogi.</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <hr class="border-white/5">
+
+                <!-- Section 3: Social Media -->
+                <section>
+                    <div class="flex items-center gap-3 mb-5">
+                        <i class="fas fa-bullhorn text-brandYellow text-xl"></i>
+                        <h2 class="text-2xl font-serif font-bold text-white tracking-wide">3. Social Media & Ads</h2>
+                    </div>
+                    <ul class="space-y-5">
+                        <li class="pl-5 border-l-2 border-brandYellow/50">
+                            <p class="text-white font-semibold mb-1">Ad Budget vs. Management Fee:</p>
+                            <p class="text-gray-300">Our packages cover management and design fees only. The actual budget spent on running ads is billed directly to the client.</p>
+                            <p class="text-gray-400 italic mt-1">Hindi: Package mein sirf hamari management fee hoti hai. Ads (Facebook/Google) chalane ka paisa client ko alag se lagana hota hai.</p>
+                        </li>
+                        <li class="pl-5 border-l-2 border-brandYellow/50">
+                            <p class="text-white font-semibold mb-1">Content Delivery:</p>
+                            <p class="text-gray-300">Clients are required to provide raw photos/videos of their business, or a separate photography shoot can be booked with us.</p>
+                            <p class="text-gray-400 italic mt-1">Hindi: Graphics hum banayenge, par business ki real photos client ko WhatsApp karni hongi ya hamara shoot book karna hoga.</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Section 4: Payments -->
+                <section class="mt-8 bg-gradient-to-r from-[#1a1500] to-[#111111] p-6 md:p-8 rounded-2xl border border-brandYellow/50 shadow-[0_0_20px_rgba(234,179,8,0.15)] relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-brandYellow/10 blur-[40px] rounded-full pointer-events-none"></div>
+
+                    <div class="flex items-center gap-4 mb-6 relative z-10">
+                        <div class="w-12 h-12 rounded-full bg-brandYellow flex items-center justify-center text-black shadow-[0_0_15px_rgba(234,179,8,0.4)]">
+                            <i class="fas fa-rupee-sign text-xl font-black"></i>
+                        </div>
+                        <h2 class="text-2xl md:text-3xl font-serif font-black text-brandYellow tracking-wide uppercase">4. Booking & Payments</h2>
+                    </div>
+                    
+                    <ul class="space-y-6 relative z-10">
+                        <li class="pl-5 border-l-4 border-brandYellow bg-black/40 p-4 rounded-r-lg">
+                            <p class="text-brandYellow font-bold mb-2 text-lg flex items-center gap-2">
+                                <i class="fas fa-exclamation-circle"></i> Advance Payment Mandatory:
+                            </p>
+                            <p class="text-gray-200 font-medium">A mandatory <span class="text-brandYellow font-bold text-lg">50% advance payment</span> is required to start any project or confirm a booking slot. The remaining 50% is due on delivery.</p>
+                            <p class="text-gray-400 italic mt-2">Hindi: Koi bhi kaam shuru karne ke liye <span class="text-white font-bold">50% Advance dena compulsory hai</span>. Baaki ka 50% delivery wale din dena hoga.</p>
+                        </li>
+                        
+                        <li class="pl-5 border-l-2 border-brandYellow/50">
+                            <p class="text-white font-semibold mb-1">Travel Charges:</p>
+                            <p class="text-gray-300">Travel within Banda city limits is free of charge. Events outside city limits will include standard travel charges.</p>
+                            <p class="text-gray-400 italic mt-1">Hindi: Banda city ke andar shoot pe aana free hai. City ke bahar ke events ke liye travel charge lagega.</p>
+                        </li>
+                        
+                        <li class="pl-5 border-l-2 border-brandYellow/50">
+                            <p class="text-red-400 font-semibold mb-1 flex items-center gap-2">
+                                <i class="fas fa-ban"></i> Refund Policy:
+                            </p>
+                            <p class="text-gray-300">Once a project has started or digital assets (domains/hosting) have been purchased, the advance payment is strictly <span class="text-red-400 font-bold">non-refundable</span>.</p>
+                            <p class="text-gray-400 italic mt-1">Hindi: Kaam shuru hone ya domain kharidne ke baad advance payment wapas <span class="text-red-400 font-bold">(refund) nahi hogi</span>.</p>
+                        </li>
+                    </ul>
+                </section>
+
+                <div class="mt-12 p-6 bg-brandYellow/10 border border-brandYellow/20 rounded-xl text-center">
+                    <p class="text-brandYellow font-bold mb-2">Have questions about our rules?</p>
+                    <p class="text-sm text-gray-300 mb-4">Kuch aur poochna chahte hain? Feel free to reach out.</p>
+                    <a href="https://wa.me/918423996254" target="_blank" class="inline-block bg-brandYellow text-black font-bold px-6 py-2 rounded shadow-lg hover:bg-yellow-400 transition-colors">
+                        <i class="fab fa-whatsapp mr-2"></i> Contact Support
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-8 pb-10 text-center text-gray-500 text-xs bg-[#020202] mt-auto w-full border-t border-white/5">
+        <p class="mb-3">&copy; 2026 M Square Marketing. All rights reserved.</p>
+        <div class="flex justify-center gap-4">
+            <a href="privacy-policy.html" class="hover:text-brandYellow transition-colors">Privacy Policy</a>
+            <span>|</span>
+            <a href="rules-policy.html" class="hover:text-brandYellow transition-colors">Rules & Policies</a>
+        </div>
+    </footer>
+
+</body>
+</html>

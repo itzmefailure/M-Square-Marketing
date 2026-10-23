@@ -46,14 +46,19 @@
                         <a href="https://api.whatsapp.com/send?phone=918423996254&text=Hello%20M%20Square%20Marketing!" target="_blank" class="gold-border px-5 py-2 text-sm font-medium gold-text gold-bg-hover transition cursor-pointer">Contact Us</a>
                     </div>
                 </div>
-
+                <!-- Search Button (Header mein lagayein) -->
+<button onclick="openSearchModal()" class="text-white hover:text-brandYellow transition-colors text-lg p-2 ml-auto mr-4 md:mr-6">
+    <i class="fas fa-search"></i>
+</button>
                 <div class="md:hidden flex items-center">
                     <button id="mobile-menu-btn" class="text-yellow-500 hover:text-white focus:outline-none transition p-2">
                         <i class="fas fa-bars text-3xl"></i>
                     </button>
+                    
                 </div>
             </div>
         </div>
+
 
         <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden md:hidden bg-[#0a0a0a] border-b border-yellow-700/30 absolute w-full left-0 top-20 shadow-2xl z-50">
@@ -66,7 +71,6 @@
             </div>
         </div>
     </nav>
-
     <!-- VIP Hero Section -->
     <section id="home" class="pt-32 pb-20 px-4 relative overflow-hidden min-h-[90vh] flex items-center">
         <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-yellow-600/10 blur-[120px] rounded-full pointer-events-none"></div>
@@ -563,7 +567,10 @@
                 <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8 text-center md:text-left">
                     <p>&copy; 2026 M Square Marketing. All rights reserved.</p>
                     <a href="privacy-policy.html" class="hover:text-yellow-500 transition border-b border-transparent hover:border-yellow-500">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="rules-policy.html" class="hover:text-brandYellow transition-colors">Rules & Policies</a>
                 </div>
+                
                 <div class="flex items-center gap-2">
                     <span class="inline-block w-2 h-2 rounded-full bg-green-500 animate-ping"></span>
                     <p class="italic text-yellow-600/90 font-medium">Proudly Serving Bundelkhand & Global Clients | Your Trust. Our Commitment.</p>
@@ -652,6 +659,123 @@
     <button id="scrollToTopBtn" onclick="scrollToTop()" class="fixed bottom-6 right-6 z-[150] hidden bg-gradient-to-r from-yellow-600 to-yellow-400 text-black w-12 h-12 rounded-full items-center justify-center shadow-[0_0_15px_rgba(234,179,8,0.5)] hover:scale-110 transition-transform duration-300 focus:outline-none">
         <i class="fas fa-arrow-up text-xl"></i>
     </button>
+    <!-- ========================================== -->
+<!-- FULL SCREEN SEARCH MODAL                   -->
+<!-- ========================================== -->
+<div id="search-modal" class="fixed inset-0 z-[100] bg-black/95 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300 flex flex-col pt-24 px-4 md:px-10 hidden">
+    
+    <!-- Close Button -->
+    <button onclick="closeSearchModal()" class="absolute top-6 right-6 text-gray-400 hover:text-brandYellow text-3xl transition-colors">
+        <i class="fas fa-times"></i>
+    </button>
+
+    <!-- Search Input Area -->
+    <div class="max-w-3xl mx-auto w-full relative">
+        <div class="flex items-center border-b-2 border-brandYellow/50 pb-3">
+            <i class="fas fa-search text-brandYellow text-2xl mr-4"></i>
+            <input type="text" id="searchInput" onkeyup="performSearch()" placeholder="Search services (e.g., website, reels, ads)..." class="w-full bg-transparent text-white text-2xl md:text-3xl focus:outline-none placeholder-gray-600 font-serif">
+        </div>
+        
+        <!-- Search Results Container -->
+        <div id="searchResults" class="mt-8 space-y-4 max-h-[60vh] overflow-y-auto custom-scrollbar">
+            <!-- Results yahan JS ke through aayenge -->
+        </div>
+        
+        <!-- Default text jab kuch type na kiya ho -->
+        <p id="searchHint" class="text-gray-500 text-sm mt-6 text-center">Type at least 2 characters to search.</p>
+    </div>
+</div>
+<!-- Search Script -->
+<script>
+    // 1. Aapki Website Ka Database (Services & Pages)
+    const siteData = [
+        { 
+            title: "VIP 10-Min Event Reels", 
+            desc: "Get your cinematic event reel edited and delivered in 10 minutes.", 
+            link: "event-reels.html", 
+            keywords: "reel, video, event, wedding, delivery, 10 min, videography, camera" 
+        },
+        { 
+            title: "Website Development", 
+            desc: "Professional, responsive websites for your business.", 
+            link: "pricing.html", 
+            keywords: "web, website, site, development, design, html, coding, online" 
+        },
+        { 
+            title: "Social Media Management", 
+            desc: "Grow your Instagram/Facebook with daily posts and ads.", 
+            link: "pricing.html", 
+            keywords: "social media, instagram, facebook, ads, marketing, posts, seo, growth" 
+        },
+        { 
+            title: "Rules & Policies", 
+            desc: "Read our booking, payment, and refund policies.", 
+            link: "rules-policy.html", 
+            keywords: "rules, policy, terms, payment, advance, refund, conditions" 
+        }
+    ];
+
+    const searchModal = document.getElementById('search-modal');
+    const searchInput = document.getElementById('searchInput');
+    const searchResults = document.getElementById('searchResults');
+    const searchHint = document.getElementById('searchHint');
+
+    // Open Search
+    function openSearchModal() {
+        searchModal.classList.remove('hidden');
+        // Thoda delay taaki display block hone ke baad animation chale
+        setTimeout(() => {
+            searchModal.classList.remove('opacity-0', 'pointer-events-none');
+            searchInput.focus(); // Khulte hi keyboard open ho jayega
+        }, 10);
+    }
+
+    // Close Search
+    function closeSearchModal() {
+        searchModal.classList.add('opacity-0', 'pointer-events-none');
+        setTimeout(() => {
+            searchModal.classList.add('hidden');
+            searchInput.value = ''; // Input clear kar do
+            searchResults.innerHTML = ''; // Results clear kar do
+            searchHint.style.display = 'block';
+        }, 300);
+    }
+
+    // Live Search Function
+    function performSearch() {
+        const query = searchInput.value.toLowerCase().trim();
+        searchResults.innerHTML = ''; // Purane results clear karo
+
+        if (query.length < 2) {
+            searchHint.style.display = 'block';
+            return;
+        }
+
+        searchHint.style.display = 'none';
+        
+        // Data filter karna (Title ya keywords mein match dhundna)
+        const results = siteData.filter(item => 
+            item.title.toLowerCase().includes(query) || 
+            item.keywords.includes(query)
+        );
+
+        if (results.length === 0) {
+            searchResults.innerHTML = `<p class="text-gray-400 text-center mt-10">Oops! No results found for "${query}". Try searching for 'Reels' or 'Website'.</p>`;
+            return;
+        }
+
+        // Result dikhana
+        results.forEach(item => {
+            const resultCard = `
+                <a href="${item.link}" class="block bg-[#111111] border border-white/10 hover:border-brandYellow p-4 rounded-xl transition-all hover:scale-[1.01] group">
+                    <h3 class="text-brandYellow text-lg font-bold group-hover:text-yellow-400">${item.title}</h3>
+                    <p class="text-gray-400 text-sm mt-1">${item.desc}</p>
+                </a>
+            `;
+            searchResults.insertAdjacentHTML('beforeend', resultCard);
+        });
+    }
+</script>
 
     <!-- JS script attached -->
     <script src="script.js"></script>
