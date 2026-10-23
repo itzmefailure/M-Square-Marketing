@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+        
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #050505;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, .brand-font {
+    font-family: 'Playfair Display', serif;
+}
+
+.gold-text {
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.gold-border {
+    border-image: linear-gradient(to right, #bf953f, #fcf6ba, #b38728) 1;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.gold-bg-hover:hover {
+    background: linear-gradient(to right, #bf953f, #aa771c);
+    color: black;
+    border: none;
+}
+
+.card-bg {
+    background: linear-gradient(145deg, #111111, #0a0a0a);
+    border: 1px solid #332711;
+}
+
+/* Floating animation for VIP badge */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
+.float-anim {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Timeline line for process */
+.process-line::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(to bottom, #ca8a04, transparent);
+    z-index: 0;
+}
+
+@media (min-width: 768px) {
+    .process-line::before {
+        display: none;
+    }
+}
