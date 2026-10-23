@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>VIP Event Reels | M Square Marketing</title>
+    <!-- MASTER SEO TAGS FOR GOOGLE RANKING         -->
+    <!-- ========================================== -->
+    
+    <title>M Square Marketing | Best Marketing Agency & Developer in Banda</title>
+    
+    <meta name="description" content="M Square Marketing is the best marketing agency and web development company in Banda, Bundelkhand. We specialize in premium websites, social media growth, and our exclusive on-demand 10-min reel making service.">
+    
+    <meta name="keywords" content="M Square Marketing, Best Marketing Agency in Banda, Best Developer in Banda, Web Development Banda, Social Media Marketing Bundelkhand, 10 minute reels booking, digital agency 210001, website designer in Banda UP, best marketing company">
+    
+    <meta name="author" content="M Square Marketing">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
     
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -270,6 +281,122 @@
 
         menuToggle.addEventListener('click', openMenu);
         menuClose.addEventListener('click', closeMenu);
+    </script>
+
+    <!-- ========================================== -->
+    <!-- VIP STARTUP OFFER POP-UP & FLOATING REWARD -->
+    <!-- ========================================== -->
+    
+    <!-- 1. Center Pop-up Modal -->
+    <div id="startup-offer-popup" class="fixed inset-0 z-[100] flex items-center justify-center px-4 opacity-0 pointer-events-none transition-opacity duration-500 bg-black/80 backdrop-blur-sm">
+        <div class="relative bg-gradient-to-b from-[#1a1500] to-[#0a0a0a] border-2 border-brandYellow rounded-2xl p-6 md:p-8 max-w-sm w-full shadow-[0_0_40px_rgba(234,179,8,0.3)] transform scale-95 transition-transform duration-500" id="popup-content">
+            
+            <!-- Close Button -->
+            <button onclick="closePopupToReward()" aria-label="Close Offer" class="absolute top-4 right-4 text-gray-400 hover:text-brandYellow transition-colors text-xl z-10">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="flex justify-center mb-5 mt-2">
+                <span class="bg-brandYellow text-black text-[10px] font-black uppercase tracking-[0.2em] px-4 py-1.5 rounded-full shadow-[0_0_15px_rgba(234,179,8,0.5)] animate-pulse">
+                    🚀 Launch Offer
+                </span>
+            </div>
+
+            <div class="text-center">
+                <h3 class="text-3xl font-serif font-bold text-white mb-2 leading-tight">
+                    VIP Reel <br> <span class="text-brandYellow text-4xl">@ ₹499 Only!</span>
+                </h3>
+                <p class="text-gray-300 text-sm mb-6 leading-relaxed">
+                    Banda mein pehli baar! Book your 10-Min Event Cinematic Reel at this exclusive startup price.
+                </p>
+
+                <div class="bg-black/50 border border-white/10 rounded-lg p-3 mb-6">
+                    <p class="text-brandYellow text-xs font-bold uppercase tracking-wider mb-1">Limited Slots Available</p>
+                    <p class="text-gray-400 text-[11px]">Valid only for the first 50 bookings!</p>
+                </div>
+
+                <a href="https://wa.me/918423996254?text=Hi%20M%20Square%20Marketing!%20Mujhe%20499rs%20wala%20Startup%20Offer%20claim%20karna%20hai%20VIP%20Reel%20ke%20liye." target="_blank" onclick="closePopupToReward()" class="flex items-center justify-center w-full bg-brandYellow text-black font-extrabold text-base py-3.5 rounded-xl shadow-[0_0_20px_rgba(234,179,8,0.2)] hover:bg-yellow-400 hover:scale-[1.02] transition-all">
+                    Claim ₹499 Offer <br><i class="fab fa-whatsapp ml-2 text-xl"></i>
+                </a>
+                
+                <button onclick="closePopupToReward()" class="mt-4 text-gray-500 hover:text-white text-xs underline underline-offset-2 transition-colors">
+                    No thanks, I'll pay regular price
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Side Floating Reward Box (Initially Hidden) -->
+    <div id="side-reward-box" class="fixed bottom-24 left-4 z-[90] transform -translate-x-32 opacity-0 pointer-events-none transition-all duration-500">
+        <button onclick="openPopupFromReward()" class="flex items-center gap-2.5 bg-gradient-to-r from-brandYellow to-yellow-500 text-black font-extrabold text-xs md:text-sm px-4 py-3 rounded-r-2xl shadow-[0_0_25px_rgba(234,179,8,0.4)] hover:scale-105 transition-all border-y border-r border-white/30">
+            <span class="w-6 h-6 rounded-full bg-black text-brandYellow flex items-center justify-center text-xs animate-bounce shadow-inner">🎁</span>
+            <div class="text-left leading-tight">
+                <span class="block text-[10px] uppercase tracking-wider text-black/80 font-bold">Claim Offer</span>
+                <span class="block text-sm font-black">₹499 Only</span>
+            </div>
+        </button>
+    </div>
+
+    <!-- Script Logic -->
+    <script>
+        // 1. Page load hone ke 3 second baad pop-up aayega
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                // Agar user ne pehle se session mein cut nahi kiya hai, tabhi khulega
+                if(!sessionStorage.getItem('offerDismissed')) {
+                    showPopup();
+                } else {
+                    // Agar pehle cut kar chuka hai, toh side mein reward box dikhega
+                    showRewardBox();
+                }
+            }, 3000);
+        });
+
+        // Pop-up dikhane ka function
+        function showPopup() {
+            const popup = document.getElementById('startup-offer-popup');
+            const content = document.getElementById('popup-content');
+            popup.classList.remove('opacity-0', 'pointer-events-none');
+            popup.classList.add('opacity-100', 'pointer-events-auto');
+            content.classList.remove('scale-95');
+            content.classList.add('scale-100');
+            
+            // Pop-up khula hai toh side wala reward box chhupa do
+            hideRewardBox();
+        }
+
+        // Jab user pop-up ko cut karega (X ya No thanks dabayega)
+        function closePopupToReward() {
+            const popup = document.getElementById('startup-offer-popup');
+            const content = document.getElementById('popup-content');
+            popup.classList.remove('opacity-100', 'pointer-events-auto');
+            popup.classList.add('opacity-0', 'pointer-events-none');
+            content.classList.remove('scale-100');
+            content.classList.add('scale-95');
+            
+            // Session mein save karlo aur side mein reward box laao
+            sessionStorage.setItem('offerDismissed', 'true');
+            showRewardBox();
+        }
+
+        // Jab user side wale reward box par click karega toh pop-up wapas khulega
+        function openPopupFromReward() {
+            showPopup();
+        }
+
+        // Side reward box ko screen par lane ka function
+        function showRewardBox() {
+            const rewardBox = document.getElementById('side-reward-box');
+            rewardBox.classList.remove('-translate-x-32', 'opacity-0', 'pointer-events-none');
+            rewardBox.classList.add('translate-x-0', 'opacity-100', 'pointer-events-auto');
+        }
+
+        // Side reward box ko chhupane ka function
+        function hideRewardBox() {
+            const rewardBox = document.getElementById('side-reward-box');
+            rewardBox.classList.remove('translate-x-0', 'opacity-100', 'pointer-events-auto');
+            rewardBox.classList.add('-translate-x-32', 'opacity-0', 'pointer-events-none');
+        }
     </script>
 </body>
 </html>
