@@ -127,9 +127,9 @@ if (floatingReward) {
 }
 
 window.addEventListener('load', () => {
-    // 3 Second baad Popup TABHI khulega jab Date 30 Nov 2026 ke andar ho
+    // 10 Second baad Popup TABHI khulega jab Date 30 Nov 2026 ke andar ho
     if (new Date().getTime() <= targetDate) {
-        setTimeout(openOfferModal, 3000);
+        setTimeout(openOfferModal, 10000);
     } else {
         // Agar date chali gayi toh chhote wale reward box ko poori tarah hide kar do
         if (floatingReward) floatingReward.style.display = 'none';

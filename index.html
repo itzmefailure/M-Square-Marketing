@@ -24,6 +24,95 @@
 <link rel="icon" type="image/png" href="/assets/favicon.jpeg">
 </head>
 <body class="antialiased">
+   <!-- ========================================== -->
+    <!-- PREMIUM AGENCY WELCOME SPLASH SCREEN       -->
+    <!-- ========================================== -->
+    
+    <!-- Splash Screen CSS (Grid Animation) -->
+    <style>
+        .tech-grid-bg {
+            background-image: radial-gradient(rgba(234, 179, 8, 0.2) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: panGrid 8s linear infinite;
+        }
+        @keyframes panGrid {
+            0% { background-position: 0px 0px; }
+            100% { background-position: 30px 30px; }
+        }
+    </style>
+
+    <div id="welcome-splash" class="fixed inset-0 z-[9999] bg-[#050505] flex flex-col items-center justify-center transition-all duration-[800ms] ease-in-out origin-top overflow-hidden">
+        
+        <!-- Animated Tech Grid Background -->
+        <div class="absolute inset-0 tech-grid-bg pointer-events-none opacity-40"></div>
+
+        <!-- Glowing Floating Orbs -->
+        <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="w-64 h-64 md:w-96 md:h-96 bg-brandYellow/10 blur-[100px] rounded-full animate-pulse"></div>
+            <div class="absolute top-10 left-10 w-32 h-32 bg-brandYellow/10 blur-[80px] rounded-full animate-ping" style="animation-duration: 4s;"></div>
+            <div class="absolute bottom-10 right-10 w-40 h-40 bg-brandYellow/5 blur-[90px] rounded-full animate-pulse" style="animation-duration: 5s;"></div>
+        </div>
+
+        <!-- "WELCOME TO" Text -->
+        <div id="splash-welcome" class="opacity-0 -translate-y-5 transition-all duration-1000 ease-out relative z-10 mb-4 md:mb-6">
+            <span class="text-gray-400 text-sm md:text-base tracking-[0.5em] uppercase font-semibold">Welcome To</span>
+        </div>
+
+        <!-- Real M Square Logo Reveal -->
+        <img src="logo.jpg" id="splash-logo" alt="M Square Logo" class="w-40 md:w-56 object-contain rounded-2xl shadow-[0_0_50px_rgba(234,179,8,0.25)] opacity-0 scale-50 transition-all duration-1000 ease-out mb-8 relative z-10 border border-white/5">
+
+        <!-- Tagline & Badge Reveal -->
+        <div id="splash-text" class="text-center opacity-0 translate-y-10 transition-all duration-1000 ease-out relative z-10 flex flex-col items-center">
+            <!-- Premium VIP Badge -->
+            <div class="inline-flex items-center gap-2 bg-black/50 backdrop-blur-md border border-brandYellow/40 text-brandYellow text-xs md:text-sm px-6 py-2.5 rounded-full font-medium tracking-wide shadow-[0_0_20px_rgba(234,179,8,0.15)]">
+                👑 Banda's 1st Virtual Market Agency
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Splash Screen Animation Logic (Script) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const splash = document.getElementById('welcome-splash');
+            const welcomeText = document.getElementById('splash-welcome');
+            const logo = document.getElementById('splash-logo');
+            const textBadge = document.getElementById('splash-text');
+
+            // Step 1: "WELCOME TO" fades in and drops slightly
+            setTimeout(() => {
+                welcomeText.classList.remove('opacity-0', '-translate-y-5');
+                welcomeText.classList.add('opacity-100', 'translate-y-0');
+            }, 200);
+
+            // Step 2: Real Logo Zoom & Glow in
+            setTimeout(() => {
+                logo.classList.remove('opacity-0', 'scale-50');
+                logo.classList.add('opacity-100', 'scale-100');
+            }, 800);
+
+            // Step 3: Tagline Badge Slides Up 
+            setTimeout(() => {
+                textBadge.classList.remove('opacity-0', 'translate-y-10');
+                textBadge.classList.add('opacity-100', 'translate-y-0');
+            }, 1400);
+
+            // Step 4: The Khatarnaak Exit (Swipe Up Reveal)
+            // Thoda time badha diya hai (4 seconds) taaki animation aur text acche se padha ja sake
+            setTimeout(() => {
+                splash.style.transform = 'translateY(-100%) scale(1.02)';
+                splash.style.opacity = '0';
+                splash.style.borderBottomLeftRadius = '50%';
+                splash.style.borderBottomRightRadius = '50%';
+                
+                // Code se puri tarah hata dena
+                setTimeout(() => {
+                    splash.remove();
+                }, 800); 
+            }, 4200); // 4.2 seconds tak pura welcome show chalega
+        });
+    </script>
+    <!-- ========================================== --> 
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-black/95 backdrop-blur-md border-b border-yellow-700/30">
