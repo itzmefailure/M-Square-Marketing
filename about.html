@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<!-- Overflow-x-hidden added here -->
+<html lang="en" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | LastWish Marketing</title>
+    <link rel="icon" type="image/jpg" href="./assets/favicon.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #050505;
+            color: #ffffff;
+        }
+
+        h1, h2, h3, .brand-font { font-family: 'Playfair Display', serif; }
+
+        .gold-text { 
+            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c); 
+            -webkit-background-clip: text; 
+            background-clip: text; 
+            color: transparent; 
+        }
+
+        .premium-nav-btn {
+            background: linear-gradient(145deg, #0a0805, #050505);
+            border: 1px solid rgba(191, 149, 63, 0.25);
+            border-radius: 2px;
+            transition: all 0.4s ease;
+        }
+        .premium-nav-btn:hover {
+            border-color: rgba(191, 149, 63, 0.8);
+            box-shadow: 0 4px 15px rgba(191, 149, 63, 0.2);
+            transform: translateY(-1px);
+        }
+
+        .team-card {
+            background: linear-gradient(145deg, rgba(17, 17, 17, 0.7), rgba(10, 10, 10, 0.9));
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(191, 149, 63, 0.15);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .team-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(191, 149, 63, 0.8);
+            box-shadow: 0 15px 35px rgba(191, 149, 63, 0.2);
+        }
+
+        .team-image-container { overflow: hidden; }
+        .team-image { transition: transform 0.7s ease; }
+        .team-card:hover .team-image { transform: scale(1.1); }
+
+        @keyframes pulse-glow {
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.1); }
+        }
+        .bg-glow { animation: pulse-glow 6s infinite alternate; }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in { animation: fadeInUp 1s ease forwards; }
+        .delay-100 { animation-delay: 0.2s; }
+        .delay-200 { animation-delay: 0.4s; }
+    </style>
+</head>
+<!-- Overflow-x-hidden added to body as well -->
+<body class="antialiased relative flex flex-col min-h-screen overflow-x-hidden">
+
+    <!-- 🌟 HEADER SECTION 🌟 -->
+    <header class="fixed top-0 w-full bg-[#050505]/95 backdrop-blur-md border-b border-yellow-700/30 py-3 px-4 md:px-8 flex justify-between items-center z-50 shadow-lg">
+        <a href="index.html" class="flex items-center gap-3 hover:opacity-80 transition-opacity">
+            <img src="./assets/logo.jpg" alt="Lastwish Marketing Logo" class="w-12 h-12 md:w-14 md:h-14 object-contain rounded-md shadow-[0_0_15px_rgba(234,179,8,0.2)] border border-yellow-500/30">
+            <div>
+                <h1 class="text-2xl font-bold tracking-widest gold-text">LastWish</h1>
+                <p class="text-[10px] tracking-[0.3em] text-gray-400 font-sans uppercase font-semibold">M A R K E T I N G</p>
+            </div>
+        </a>
+        
+        <div class="flex items-center">
+            <a href="pricing.html" class="premium-nav-btn px-4 py-2 md:px-6 md:py-2.5 flex items-center gap-2 md:gap-3 group cursor-pointer font-sans">
+                <span class="text-[#d4af37] text-[10px] md:text-xs tracking-[0.25em] md:tracking-[0.3em] uppercase font-bold group-hover:brightness-125 transition-all duration-300">
+                    Services
+                </span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 md:h-4 md:w-4 text-[#d4af37] opacity-70 group-hover:opacity-100 group-hover:translate-x-1 transition-all duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- 🌟 MAIN CONTENT 🌟 -->
+    <!-- overflow-hidden added to main to trap background glows -->
+    <main class="flex-grow pt-32 pb-20 relative z-10 overflow-hidden">
+        
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-96 h-96 bg-[#bf953f]/10 blur-[100px] rounded-full bg-glow pointer-events-none z-[-1]"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center mb-16 animate-fade-in opacity-0">
+                <h2 class="text-yellow-500 font-semibold text-sm md:text-base tracking-[0.3em] uppercase mb-2 font-sans">The Minds Behind The Magic</h2>
+                <h3 class="text-4xl md:text-5xl font-bold mb-4 font-serif">Meet Our <span class="gold-text">Experts</span></h3>
+                <p class="text-gray-400 max-w-2xl mx-auto font-sans">
+                    A combination of elite engineering and creative visual storytelling. We don't just build websites; we build digital empires.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10 lg:gap-16 max-w-5xl mx-auto">
+                
+                <!-- CARD 1: Deepak Sharma -->
+                <div class="team-card rounded-2xl p-6 group animate-fade-in opacity-0 delay-100 h-full">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#bf953f] to-[#aa771c] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div>
+                        <div class="team-image-container w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full border-2 border-yellow-600/30 mb-6 p-1 shadow-[0_0_20px_rgba(191,149,63,0.15)] group-hover:border-[#bf953f] transition-colors">
+                            <img src="./assets/founder.png" alt="Deepak Sharma" class="team-image w-full h-full object-cover rounded-full bg-gray-800">
+                        </div>
+
+                        <div class="text-center">
+                            <div class="inline-block px-3 py-1 bg-yellow-500/10 border border-yellow-500/30 rounded-full text-yellow-500 text-[10px] md:text-xs font-bold tracking-wider mb-3">
+                                FOUNDER & DEVELOPER
+                            </div>
+                            <h4 class="text-2xl font-bold mb-1 gold-text">Deepak Sharma</h4>
+                            <p class="text-[10px] md:text-xs text-gray-400 tracking-widest uppercase mb-4 font-sans font-semibold">B.Tech in Computer Science Engineering</p>
+                            
+                            <p class="text-gray-300 text-sm leading-relaxed px-2 font-sans">
+                                "The architect behind the code. Combining hardcore software engineering with marketing psychology to build flawless, 24/7 high-converting digital sales machines."
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Deepak's Social Links -->
+                    <div class="flex justify-center gap-4 mt-6 pt-4 border-t border-white/5">
+                        <a href="https://www.linkedin.com/in/deepak-sharma-36b044268?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-black hover:bg-[#bf953f] hover:border-[#bf953f] transition-all duration-300 shadow-lg">
+                            <i class="fab fa-linkedin-in text-sm"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ideeepaksharma?exln=ZzlsNzhhY3Z3b3B1" target="_blank" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-black hover:bg-[#bf953f] hover:border-[#bf953f] transition-all duration-300 shadow-lg">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- CARD 2: Aadi -->
+                <div class="team-card rounded-2xl p-6 group animate-fade-in opacity-0 delay-200 h-full">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#bf953f] to-[#aa771c] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    
+                    <div>
+                        <div class="team-image-container w-32 h-32 md:w-40 md:h-40 mx-auto rounded-full border-2 border-yellow-600/30 mb-6 p-1 shadow-[0_0_20px_rgba(191,149,63,0.15)] group-hover:border-[#bf953f] transition-colors">
+                            <img src="./assets/editor.png" alt="Aadi" class="team-image w-full h-full object-cover rounded-full bg-gray-800">
+                        </div>
+
+                        <div class="text-center">
+                            <div class="inline-block px-3 py-1 bg-yellow-500/10 border border-yellow-500/30 rounded-full text-yellow-500 text-[10px] md:text-xs font-bold tracking-wider mb-3">
+                                LEAD EDITOR
+                            </div>
+                            <h4 class="text-2xl font-bold mb-1 gold-text">Aadi</h4>
+                            <p class="text-[10px] md:text-xs text-gray-400 tracking-widest uppercase mb-4 font-sans font-semibold">Master of Visual Storytelling</p>
+                            
+                            <p class="text-gray-300 text-sm leading-relaxed px-2 font-sans">
+                                "The creative eye behind the brand. Crafting stunning graphics, seamless video edits, and visual content that hooks attention and converts visitors into loyal clients."
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Aadi's Social Links -->
+                    <div class="flex justify-center gap-4 mt-6 pt-4 border-t border-white/5">
+                        <a href="https://www.instagram.com/the.aadi.0119?exln=YWIwbGU3Zmx3NHc1" target="_blank" class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 hover:text-black hover:bg-[#bf953f] hover:border-[#bf953f] transition-all duration-300 shadow-lg">
+                            <i class="fab fa-instagram text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- 🌟 VIP SPONSOR & PARTNER SECTION 🌟 -->
+<section class="py-20 relative overflow-hidden bg-[#020202] border-t border-b border-yellow-700/20 mt-12 mb-12">
+    
+    <!-- Background Ambient Glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[#bf953f]/5 blur-[120px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        <!-- Premium Glassmorphism Card -->
+        <div class="glass-card rounded-3xl p-8 md:p-12 lg:p-16 flex flex-col md:flex-row items-center gap-10 md:gap-16 border border-[#bf953f]/30 relative bg-gradient-to-br from-[#111111]/80 to-[#050505]/90 shadow-2xl">
+
+            <!-- Left Side: Image with Glowing Ring -->
+            <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 relative group mx-auto md:mx-0">
+                <!-- Golden Animated Aura -->
+                <div class="absolute inset-0 bg-gradient-to-tr from-[#bf953f] to-[#fcf6ba] rounded-full blur-md opacity-40 group-hover:opacity-70 group-hover:scale-105 transition-all duration-500"></div>
+                
+                <!-- Sponsor Photo (Replace 'ankit-sir.jpg' with actual photo) -->
+                <img src="./assets/sponser.png" alt="Ankit Dixit Sir" class="relative w-full h-full object-cover rounded-full border-2 border-[#bf953f] shadow-[0_0_30px_rgba(191,149,63,0.3)] z-10 bg-black">
+                
+                <!-- Floating VIP Badge -->
+                <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 bg-[#050505] border border-[#bf953f] px-5 py-1.5 rounded-full flex items-center gap-2 whitespace-nowrap shadow-[0_5_15px_rgba(0,0,0,0.8)] z-20">
+                    <span class="text-[#bf953f] text-sm"><i class="fas fa-crown"></i></span>
+                    <span class="text-white text-[10px] md:text-xs font-bold tracking-widest uppercase font-sans">Top Educator</span>
+                </div>
+            </div>
+
+            <!-- Right Side: Content & Quote -->
+            <div class="text-center md:text-left flex-grow">
+                
+                <!-- Official Sponsor Tag -->
+                <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#bf953f]/10 border border-[#bf953f]/30 text-[#eec874] text-[10px] md:text-xs font-bold tracking-[0.2em] uppercase mb-5 font-sans">
+                    <span class="animate-pulse text-[#bf953f]">✨</span> Sponsored By
+                </div>
+                
+                <!-- Name -->
+                <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 font-serif text-white">Ankit <span class="gold-text">Dixit Sir</span></h2>
+                
+                <!-- Authority Title -->
+                <p class="text-gray-400 text-xs md:text-sm font-sans tracking-widest mb-6 uppercase font-semibold">
+                    Banda's Premier Physics Instructor (UP Board & IIT JEE Mentor) | Founder of <span class="text-yellow-500 font-bold">YT- Physics in Style of Ankit Dixit</span>
+                </p>
+
+                <!-- Premium Quote Box -->
+                <div class="relative mt-2 mb-8">
+                    <!-- Big Quotation Mark Icon -->
+                    <span class="absolute -top-6 -left-2 md:-left-6 text-6xl text-[#bf953f] opacity-20 font-serif">"</span>
+                    
+                    <p class="text-gray-300 text-sm md:text-base italic font-sans leading-relaxed relative z-10 pl-4 border-l-2 border-[#bf953f]/50">
+                        "LastWish Marketing is completely revolutionizing the digital landscape of Banda. Their premium quality, speed, and vision are unmatched. I proudly support and highly recommend them to every business owner looking for explosive growth."
+                    </p>
+                </div>
+                
+                <!-- 🌟 NEW: Social Media Links for Ankit Sir 🌟 -->
+                <div class="flex items-center justify-center md:justify-start gap-4">
+                    <span class="text-xs text-gray-500 font-sans tracking-widest uppercase font-semibold mr-2">Connect with Sir:</span>
+                    
+                    <!-- Instagram Button -->
+                    <a href="https://www.instagram.com/ankitdixitofficial_?dlrf=MXJlM2dzM25jejhoaQ==" target="_blank" class="w-10 h-10 rounded-full border border-gray-700 bg-white/5 flex items-center justify-center text-gray-300 hover:text-white hover:border-[#E1306C] hover:bg-[#E1306C]/20 hover:shadow-[0_0_15px_rgba(225,48,108,0.5)] transition-all duration-300">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    
+                    <!-- YouTube Button -->
+                    <a href="https://youtube.com/@ankitdixitbanda?si=inlxOatJquahJLMw" target="_blank" class="w-10 h-10 rounded-full border border-gray-700 bg-white/5 flex items-center justify-center text-gray-300 hover:text-white hover:border-[#FF0000] hover:bg-[#FF0000]/20 hover:shadow-[0_0_15px_rgba(255,0,0,0.5)] transition-all duration-300">
+                        <i class="fab fa-youtube text-lg"></i>
+                    </a>
+
+                    <!-- Website Button -->
+<a href="" target="_blank" class="w-10 h-10 rounded-full border border-gray-700 bg-white/5 flex items-center justify-center text-gray-300 hover:text-black hover:border-[#bf953f] hover:bg-[#bf953f] hover:shadow-[0_0_15px_rgba(191,149,63,0.6)] transition-all duration-300">
+    <i class="fas fa-globe text-lg"></i>
+</a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- 🌟 FOOTER SECTION 🌟 -->
+    <!-- overflow-hidden already present in footer class -->
+    <footer class="border-t border-yellow-700/40 pt-16 pb-8 bg-gradient-to-b from-[#0a0a0a] to-[#020202] relative overflow-hidden mt-auto">
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-yellow-600/5 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-center mb-12 pb-12 border-b border-gray-900">
+                
+                <div class="flex items-center gap-4 justify-center md:justify-start">
+                    <img src="./assets/logo.jpg" alt="Lastwish Marketing Logo" class="w-12 h-12 object-contain rounded-lg border-2 border-yellow-500 shadow-[0_0_15px_rgba(234,179,8,0.3)] bg-black">
+                    <div>
+                        <h2 class="text-2xl font-bold tracking-widest gold-text">LastWish</h2>
+                        <p class="text-[10px] tracking-[0.3em] text-gray-400 uppercase font-semibold font-sans">Digital Marketing Agency</p>
+                    </div>
+                </div>
+
+                <div class="flex justify-center">
+                    <div class="group relative bg-gradient-to-r from-[#1a150b] via-[#111111] to-[#1a150b] border-2 border-yellow-500/60 px-6 py-3 rounded-xl shadow-[0_0_25px_rgba(234,179,8,0.2)] hover:border-yellow-400 transition-all duration-300">
+                        <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-yellow-500 text-black text-[9px] font-bold px-3 py-0.5 rounded-full uppercase tracking-wider shadow">
+                            Headquarters
+                        </div>
+                        <div class="flex items-center gap-3 mt-1">
+                            <div class="w-8 h-8 rounded-full bg-yellow-500/10 flex items-center justify-center text-yellow-500 border border-yellow-500/30">
+                                <i class="fas fa-map-marked-alt text-sm animate-bounce"></i>
+                            </div>
+                            <div class="text-left font-sans">
+                                <p class="text-xs text-yellow-500/80 font-medium tracking-wide">BUNDELKHAND REGION</p>
+                                <p class="text-white font-bold text-sm tracking-wider">Banda, UP <span class="gold-text font-mono font-normal">(210001)</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 justify-center md:justify-end">
+                    <a href="https://instagram.com/lastwishmarketing" target="_blank" class="w-10 h-10 rounded-full border border-gray-800 bg-[#111] flex items-center justify-center text-gray-400 hover:text-black hover:bg-gradient-to-r hover:from-yellow-600 hover:to-yellow-400 transition-all duration-300 shadow"><i class="fab fa-instagram text-lg"></i></a>
+                    <a href="https://api.whatsapp.com/send?phone=918423996254" target="_blank" class="w-10 h-10 rounded-full border border-gray-800 bg-[#111] flex items-center justify-center text-gray-400 hover:text-black hover:bg-gradient-to-r hover:from-yellow-600 hover:to-yellow-400 transition-all duration-300 shadow"><i class="fab fa-whatsapp text-lg"></i></a>
+                </div>
+            </div>
+            
+            <div class="text-xs text-gray-500 flex flex-col lg:flex-row justify-between items-center gap-6 font-sans">
+                
+                <div class="flex flex-col md:flex-row items-center gap-4 text-center md:text-left">
+                    <p>&copy; 2026 LastWish Marketing. All rights reserved.</p>
+                    <span class="hidden md:inline">|</span>
+                    <a href="privacy-policy.html" class="hover:text-yellow-500 transition border-b border-transparent hover:border-yellow-500">Privacy Policy</a>
+                    <span class="hidden md:inline">|</span>
+                    <a href="rules-policy.html" class="hover:text-yellow-500 transition-colors">Rules & Policies</a>
+                    <span class="hidden md:inline">|</span>
+                    <a href="article.html" class="text-gray-400 hover:text-[#bf953f] transition duration-300 font-semibold">Website to Sales Machine (Article)</a>
+                </div>
+                
+                <div class="flex items-center gap-2">
+                    <span class="inline-block w-2 h-2 rounded-full bg-green-500 animate-ping"></span>
+                    <p class="italic text-yellow-600/90 font-medium">Proudly Serving Bundelkhand & Global Clients | Your Trust. Our Commitment.</p>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+</body>
+</html>
